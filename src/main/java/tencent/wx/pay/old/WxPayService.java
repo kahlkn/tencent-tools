@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import java.util.Map;
 
@@ -7,6 +7,7 @@ import java.util.Map;
  * @see <a href="https://pay.weixin.qq.com/wiki/doc/api/index.html">微信支付文档</a>
  * @author Kahle
  */
+@Deprecated
 public interface WxPayService {
 
     /**

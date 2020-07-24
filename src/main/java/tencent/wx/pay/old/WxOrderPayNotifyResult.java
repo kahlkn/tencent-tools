@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import artoria.data.Mappable;
 import artoria.util.StringUtils;
@@ -14,6 +14,7 @@ import static artoria.common.Constants.THIRTY;
  * @see <a href="https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_7&index=8">支付结果通知</a>
  * @author Kahle
  */
+@Deprecated
 public class WxOrderPayNotifyResult implements Serializable, Mappable {
     public static final String SUCCESS = "<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>";
     public static final String FAIL = "<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[FAIL]]></return_msg></xml>";

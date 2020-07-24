@@ -1,4 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+tencent.wx.pay.old.WxPayAutoConfiguration,\
 tencent.wx.miniapp.WxMiniAppAutoConfiguration,\
 tencent.wx.open.WxOpenAutoConfiguration,\
 tencent.wx.pay.WxPayAutoConfiguration

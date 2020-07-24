@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import artoria.beans.BeanUtils;
 import artoria.codec.HexUtils;
@@ -6,7 +6,7 @@ import artoria.crypto.Hash;
 import artoria.crypto.Hmac;
 import artoria.crypto.KeyUtils;
 import artoria.exception.ExceptionUtils;
-import artoria.exchange.XmlTypeAlias;
+import artoria.exchange.XmlClassAlias;
 import artoria.exchange.XmlUtils;
 import artoria.net.*;
 import artoria.random.RandomUtils;
@@ -26,6 +26,7 @@ import static artoria.common.Constants.*;
  * WeiXin pay service implementation.
  * @author Kahle
  */
+@Deprecated
 public class WxPayServiceImpl implements WxPayService {
     private static final String UNIFIED_ORDER_URL = "https://api.mch.weixin.qq.com/pay/unifiedorder";
     private static Logger log = LoggerFactory.getLogger(WxPayServiceImpl.class);
@@ -167,7 +168,7 @@ public class WxPayServiceImpl implements WxPayService {
         String sign = createSignature(requestMap, signType, mchKey);
         requestMap.put("sign", sign);
 
-        String xmlString = XmlUtils.toXmlString(requestMap, new XmlTypeAlias("xml", Map.class));
+        String xmlString = XmlUtils.toXmlString(requestMap, new XmlClassAlias("xml", Map.class));
         log.info("Unified order send:{}{}", NEWLINE, xmlString);
         result.setUnifiedOrderRequest(xmlString);
 
@@ -184,7 +185,7 @@ public class WxPayServiceImpl implements WxPayService {
             String bodyAsString = response.getBodyAsString(UTF_8);
             log.info("Unified order receive:{}{}", NEWLINE, bodyAsString);
             result.setUnifiedOrderResponse(bodyAsString);
-            Map<String, Object> map = XmlUtils.parseObject(bodyAsString, Map.class, new XmlTypeAlias("xml", Map.class));
+            Map<String, Object> map = XmlUtils.parseObject(bodyAsString, Map.class, new XmlClassAlias("xml", Map.class));
             result.fromMap(map);
         }
         catch (Exception e) {
@@ -205,7 +206,7 @@ public class WxPayServiceImpl implements WxPayService {
     public WxOrderPayNotifyResult parseOrderPayNotify(String notify, String signType) {
         log.info("The content of the order payment notice to be parsed is \"{}\". ", notify);
         WxOrderPayNotifyResult result = new WxOrderPayNotifyResult();
-        Map<String, Object> map = XmlUtils.parseObject(notify, Map.class, new XmlTypeAlias("xml", Map.class));
+        Map<String, Object> map = XmlUtils.parseObject(notify, Map.class, new XmlClassAlias("xml", Map.class));
         result.fromMap(map);
 
         // The sign type is not returned in the payment callback of WeiXin.

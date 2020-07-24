@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import artoria.data.Mappable;
 import artoria.util.StringUtils;
@@ -14,6 +14,7 @@ import static artoria.common.Constants.TWENTY;
  * @see <a href="https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1">统一下单</a>
  * @author Kahle
  */
+@Deprecated
 public class WxUnifiedOrderResult implements Serializable, Mappable {
     /**
      * 返回状态码 (Required:YES).

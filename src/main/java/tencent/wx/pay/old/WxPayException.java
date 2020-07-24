@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import artoria.exception.UncheckedException;
 
@@ -6,6 +6,7 @@ import artoria.exception.UncheckedException;
  * WeiXin pay exception.
  * @author Kahle
  */
+@Deprecated
 public class WxPayException extends UncheckedException {
 
     public WxPayException() {

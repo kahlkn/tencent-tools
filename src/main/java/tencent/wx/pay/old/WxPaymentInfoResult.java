@@ -1,4 +1,4 @@
-package tencent.wx.pay;
+package tencent.wx.pay.old;
 
 import java.io.Serializable;
 
@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @see <a href="https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5">调起支付API</a>
  * @author Kahle
  */
+@Deprecated
 public class WxPaymentInfoResult implements Serializable {
     /**
      * 返回状态码 (Required:YES).
