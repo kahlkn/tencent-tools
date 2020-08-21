@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class WxMiniAppUserInfo implements Serializable {
     private String unionId;
     private String openId;
-    private String nickname;
+    private String nickName;
     private String avatarUrl;
     private Integer gender;
     private String country;
@@ -39,14 +39,14 @@ public class WxMiniAppUserInfo implements Serializable {
         this.openId = openId;
     }
 
-    public String getNickname() {
+    public String getNickName() {
 
-        return nickname;
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
+    public void setNickName(String nickName) {
 
-        this.nickname = nickname;
+        this.nickName = nickName;
     }
 
     public String getAvatarUrl() {
@@ -124,17 +124,17 @@ public class WxMiniAppUserInfo implements Serializable {
      * @author Kahle
      */
     public static class Watermark implements Serializable {
-        private String appId;
+        private String appid;
         private String timestamp;
 
-        public String getAppId() {
+        public String getAppid() {
 
-            return appId;
+            return appid;
         }
 
-        public void setAppId(String appId) {
+        public void setAppid(String appid) {
 
-            this.appId = appId;
+            this.appid = appid;
         }
 
         public String getTimestamp() {
